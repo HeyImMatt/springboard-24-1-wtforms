@@ -16,4 +16,4 @@ db.create_all()
 
 @app.route('/add')
 def add_pets_route():
-    return 'Hello'
+    return render_template('add_pet_form.html')
