@@ -40,4 +40,6 @@ def add_pets_route():
         db.session.add(pet)
         db.session.commit()
 
+        return redirect('/')
+
     return render_template('add_pet_form.html', form=form)
