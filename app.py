@@ -15,6 +15,14 @@ debug = DebugToolbarExtension(app)
 connect_db(app)
 db.create_all()
 
+@app.route('/')
+def home_route():
+    """Route for home"""
+
+    pets = Pet.query.all()
+
+    return render_template('home.html', pets=pets)
+
 @app.route('/add', methods=['GET', 'POST'])
 def add_pets_route():
     """Route for add pet form"""
