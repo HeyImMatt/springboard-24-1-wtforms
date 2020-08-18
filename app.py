@@ -13,3 +13,7 @@ debug = DebugToolbarExtension(app)
 
 connect_db(app)
 db.create_all()
+
+@app.route('/add')
+def add_pets_route():
+    return 'Hello'
