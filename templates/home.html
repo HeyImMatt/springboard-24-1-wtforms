@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for pet in pets %}
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src={{pet.photo_url}} alt="Picture of {{pet.name}}">
-  <div class="card-body">
-    <h4 class="card-title">{{pet.name}} is {{ "available" if pet.name else "unavailable"}}</h4>
+<div class="card-group card-columns">
+  {% for pet in pets %}
+  <div class="card">
+    <img class="card-img-top" src={{pet.photo_url}} alt="Picture of {{pet.name}}">
+    <div class="card-body">
+      <h4 class="card-title">{{pet.name}} is {{ "available" if pet.name else "unavailable"}}</h4>
+    </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
 <a href="/add" class=" mt-3 btn btn-info">Add a Pet</a>
 {% endblock %}
