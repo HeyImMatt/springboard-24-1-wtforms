@@ -6,7 +6,8 @@
   <div class="card">
     <img class="card-img-top" src={{pet.photo_url}} alt="Picture of {{pet.name}}">
     <div class="card-body">
-      <h4 class="card-title">{{pet.name}} is {{ "available" if pet.name else "unavailable"}}</h4>
+      <h4 class="card-title">{{pet.name}} is {{ "available" if pet.available else "unavailable"}}</h4>
+      <a href="/{{pet.id}}">View More Info</a>
     </div>
   </div>
   {% endfor %}
